@@ -2,7 +2,7 @@ import ArticleCard from './ArticleCard'
 
 const Articles = () => {
     return (
-        <main>
+        <main class="App-main">
             <ArticleCard />
             <ArticleCard />
             <ArticleCard />

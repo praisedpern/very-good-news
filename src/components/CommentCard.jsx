@@ -1,5 +1,5 @@
 const CommentCard = () => {
-    return <section>Comment Card</section>
+    return <section class="App-comment-card">Comment Card</section>
 }
 
 export default CommentCard

@@ -1,38 +1,51 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+    text-align: center;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: min-content min-content min-content auto;
+    grid-template-areas:
+        'header'
+        'navbar'
+        'sorter'
+        'main';
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+    border: 2px solid red;
+    grid-area: header;
 }
 
-.App-link {
-  color: #61dafb;
+.App-nav {
+    border: 2px solid green;
+    grid-area: navbar;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App-sorter {
+    border: 2px solid orangered;
+    grid-area: sorter;
+}
+
+.App-sorter ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 100%;
+}
+
+.App-main {
+    border: 2px solid green;
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 100%;
+}
+
+.App-article-card {
+    border: 2px solid red;
+}
+
+.App-comment-card {
+    border: 2px solid darkslategrey;
 }
