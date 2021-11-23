@@ -5,6 +5,7 @@ import Sorter from './components/Sorter'
 import Articles from './components/Articles'
 import { useState, useEffect } from 'react'
 import { getUsers } from './utils/apiGet'
+import { UserContext } from './contexts/User'
 
 function App() {
     const [allUsers, setAllUsers] = useState([])
@@ -17,18 +18,19 @@ function App() {
                     return user.username
                 })
             )
+            setCurrentUser(allUsers[0])
         })
-    }, [])
-
-    console.log(allUsers)
+    }, [allUsers])
 
     return (
-        <div className="App">
-            <Header />
-            <Navbar />
-            <Sorter />
-            <Articles />
-        </div>
+        <UserContext.Provider value={{ currentUser }}>
+            <div className="App">
+                <Header />
+                <Navbar />
+                <Sorter />
+                <Articles />
+            </div>
+        </UserContext.Provider>
     )
 }
 
