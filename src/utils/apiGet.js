@@ -14,3 +14,9 @@ export const getUsers = () => {
         return data
     })
 }
+
+export const getArticles = () => {
+    return newsApi.get('/articles').then(({ data }) => {
+        return data.articles
+    })
+}

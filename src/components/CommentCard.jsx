@@ -1,6 +1,6 @@
 const CommentCard = () => {
     return (
-        <section class="App-comment-card">
+        <section className="App-comment-card">
             Comment Card
         </section>
     )

@@ -1,6 +1,6 @@
 const Sorter = () => {
     return (
-        <section class="App-sorter">Sort by<ul>
+        <section className="App-sorter">Sort by<ul>
             <li>created_at</li>
             <li>votes</li>
             <li>author</li>
