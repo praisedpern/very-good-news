@@ -20,7 +20,7 @@
     border: 2px solid green;
     grid-area: navbar;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 100px;
     grid-template-rows: 100%;
 }
 
