@@ -1,6 +1,3 @@
-import { useContext } from 'react'
-import { UserContext } from '../contexts/User'
-
 const UserCard = ({user}) => {
     return (
         <section className="App-user-card">
