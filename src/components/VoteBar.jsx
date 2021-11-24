@@ -8,7 +8,14 @@ const VoteBar = ({ props }) => {
     const [minusEnabled, setMinusEnabled] = useState(true)
 
     const handleVotes = (incByAmount) => {
-        patchVotes(props.article_id, incByAmount)
+        let idToUse
+        let patchType = 'articles'
+        if (props.article_id) idToUse = props.article_id
+        else {
+            patchType = 'comments'
+            idToUse = props.comment_id
+        }
+        patchVotes(idToUse, incByAmount, patchType)
         setAddedVotes((prevVotes) => {
             return prevVotes + incByAmount
         })
