@@ -6,7 +6,7 @@ const Navbar = () => {
             <h2>Topics</h2>
             <h2>Articles</h2>
             <h2>Comments</h2>
-            <UserCard />
+            <UserCard user='grumpy19'/>
         </nav>
     )
 }

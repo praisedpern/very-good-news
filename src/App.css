@@ -62,3 +62,18 @@ body {
 .App-article-card > .App-comment-card {
     margin: 10px;
 }
+
+.App-vote-bar {
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr min-content;
+    grid-template-rows: min-content;
+}
+
+.App-user-card {
+    border: 2px solid #5adface5;
+    place-items: center;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: min-content min-content;
+}

@@ -1,4 +1,4 @@
-import { useState } from "react"
+import UserCard from "./UserCard"
 
 const VoteBar = ({props}) => {
     return (
@@ -9,6 +9,7 @@ const VoteBar = ({props}) => {
             votes: {props.votes}
             <button>-</button>
             posted: {props.created_at}
+            <UserCard user={props.author} />
         </section>
         </>
     )
