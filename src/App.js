@@ -3,15 +3,8 @@ import Header from './components/Header'
 import Navbar from './components/Navbar'
 import Sorter from './components/Sorter'
 import Articles from './components/Articles'
-import { useEffect, useContext } from 'react'
-import { UserContext } from './contexts/User'
 
 function App() {
-    const { setCurrentUser } = useContext(UserContext)
-
-    useEffect(() => {
-        setCurrentUser('tickle122')
-    }, [setCurrentUser])
 
     // useEffect(() => {
     //     getUsers().then((users) => {

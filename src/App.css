@@ -15,6 +15,10 @@ body {
         'main';
 }
 
+.App > * {
+    padding: 10px;
+}
+
 .App-header {
     border: 2px solid red;
     grid-area: header;
@@ -48,8 +52,13 @@ body {
 
 .App-article-card {
     border: 2px solid red;
+    margin: 10px;
 }
 
 .App-comment-card {
     border: 2px solid darkslategrey;
+}
+
+.App-article-card > .App-comment-card {
+    margin: 10px;
 }

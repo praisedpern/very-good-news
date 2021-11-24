@@ -12,7 +12,7 @@ const newsApi = axios.create({
 export const getUsers = () => {
     return newsApi.get('/users').then(({ data }) => {
         console.log('GET /users')
-        return data
+        return data.users
     })
 }
 
@@ -24,7 +24,7 @@ export const getArticles = () => {
 }
 
 export const getComments = (articleId) => {
-    return newsApi.get(`/articles/${articleId}/comments`).then(({data}) => {
+    return newsApi.get(`/articles/${articleId}/comments`).then(({ data }) => {
         console.log('GET /articles/:article_id/comments')
         return data.comments
     })
