@@ -1,11 +1,16 @@
-const VoteBar = ({ votes, created_at }) => {
+import { useState } from "react"
+
+const VoteBar = ({props}) => {
     return (
+        <>
+        <h3>{props.title}</h3>
         <section className="App-vote-bar">
             <button>+</button>
-            votes: {votes}
+            votes: {props.votes}
             <button>-</button>
-            posted: {created_at}
+            posted: {props.created_at}
         </section>
+        </>
     )
 }
 
