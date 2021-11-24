@@ -1,7 +1,7 @@
-const CommentCard = () => {
+const CommentCard = ({ comment }) => {
     return (
         <section className="App-comment-card">
-            Comment Card
+            <p>{comment.body}</p>
         </section>
     )
 }

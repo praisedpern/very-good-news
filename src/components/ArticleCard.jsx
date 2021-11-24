@@ -1,13 +1,23 @@
 import CommentCard from './CommentCard'
+import { getComments } from '../utils/apiGet'
+import { useState, useEffect } from 'react/cjs/react.development'
 
-const ArticleCard = () => {
+const ArticleCard = ({ article }) => {
+    const [comments, setComments] = useState([])
+
+    useEffect(() => {
+        getComments(article.article_id).then((articleComments) => {
+            setComments(articleComments)
+        })
+    }, [article.article_id])
+
     return (
         <section className="App-article-card">
-            <h3>Article title</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <CommentCard />
-            <CommentCard />
-            <CommentCard />
+            <h3>{article.title}</h3>
+            <p>{article.body}</p>
+            {comments.map((comment) => {
+                return <CommentCard key={`comment${comment.comment_id}`} comment={comment} />
+            })}
         </section>
     )
 }

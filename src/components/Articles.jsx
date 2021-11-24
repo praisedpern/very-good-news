@@ -5,19 +5,17 @@ import { useEffect, useState } from 'react'
 const Articles = () => {
     const [articles, setArticles] = useState([])
 
-    // useEffect(() => {
-    //     getArticles().then((result)=>{
-    //         setArticles(result)
-    //     })
-    // }, [])
-
-    // console.log(articles)
+    useEffect(() => {
+        getArticles().then((result) => {
+            setArticles(result)
+        })
+    }, [])
 
     return (
         <main className="App-main">
-            <ArticleCard />
-            <ArticleCard />
-            <ArticleCard />
+            {articles.map((article) => {
+                return <ArticleCard key={`article${article.article_id}`} article={article}/>
+            })}
         </main>
     )
 }

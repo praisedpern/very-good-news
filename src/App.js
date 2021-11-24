@@ -4,26 +4,31 @@ import Navbar from './components/Navbar'
 import Sorter from './components/Sorter'
 import Articles from './components/Articles'
 import { useEffect, useContext } from 'react'
-import { getUsers } from './utils/apiGet'
 import { UserContext } from './contexts/User'
 
 function App() {
-    const { setCurrentUser, allUsers, setAllUsers } =
-        useContext(UserContext)
+    const { setCurrentUser } = useContext(UserContext)
 
     useEffect(() => {
-        getUsers().then((result) => {
-            setAllUsers(
-                result.map((user) => {
-                    return user.username
-                })
-            )
-        })
-    })
+        setCurrentUser('tickle122')
+    }, [setCurrentUser])
 
-    useEffect(() => {
-        setCurrentUser(allUsers[0])
-    }, [allUsers])
+    // useEffect(() => {
+    //     getUsers().then((users) => {
+    //         console.log(users)
+    //         setAllUsers(users)
+    //         setAllUsers(
+    //             users.map((user, index) => {
+    //                 !index && setCurrentUser(user.username)
+    //                 return user.username
+    //             })
+    //         )
+    //     })
+    // }, [])
+
+    // useEffect(() => {
+    //     setCurrentUser(allUsers[0])
+    // }, [allUsers])
 
     return (
         <div className="App">
