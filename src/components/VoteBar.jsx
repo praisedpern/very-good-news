@@ -1,6 +1,7 @@
 import UserCard from './UserCard'
 import { useState, useEffect } from 'react'
 import { patchVotes } from '../utils/apiPatch'
+import { Link } from 'react-router-dom'
 
 const VoteBar = ({ props }) => {
     const [addedVotes, setAddedVotes] = useState(0)
@@ -36,7 +37,7 @@ const VoteBar = ({ props }) => {
 
     return (
         <>
-            <h3>{props.title}</h3>
+            <h3><Link to={`/articles/${props.article_id}`}>{props.title}</Link></h3>
             <p>{props.topic}</p>
             <section className="App-vote-bar">
                 <button

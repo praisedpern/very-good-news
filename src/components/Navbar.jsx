@@ -8,7 +8,7 @@ const Navbar = ({ topics }) => {
             <>
                 <DropdownMenu topics={topics} />
             </>
-            <Link to="/">Articles</Link>
+            <Link to="/articles">Articles</Link>
             <Link to="/comments">Comments</Link>
             {/* <UserCard user='grumpy19'/> */}
         </nav>

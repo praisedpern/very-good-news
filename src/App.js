@@ -43,6 +43,7 @@ function App() {
                 <Routes>
                     <Route path="/topics" element={<AllTopics topics={topics}/>} />
                     <Route path="/" element={<Articles />} />
+                    <Route path="/articles" element={<Articles />} />
                     {topics.map((topic) => {
                         return (
                             <Route
