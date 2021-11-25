@@ -30,7 +30,7 @@ function App() {
 
     useEffect(() => {
         getTopics().then((topicsToSet) => {
-            setTopics([{ slug: 'all' }, ...topicsToSet])
+            setTopics([...topicsToSet])
         })
     }, [])
 
