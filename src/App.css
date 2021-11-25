@@ -2,6 +2,20 @@ body {
     margin: 0 3%;
 }
 
+h1 {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: xx-large;
+    color: white;
+    -webkit-text-stroke: 2px darkgoldenrod;
+}
+
+h2 {
+    text-transform: uppercase;
+    color: white;
+    font-size: small;
+}
+
 .App {
     text-align: center;
     min-height: 100vh;
@@ -22,6 +36,7 @@ body {
 .App-header {
     border: 2px solid red;
     grid-area: header;
+    background-color: darkblue;
 }
 
 .App-nav {
@@ -48,15 +63,18 @@ body {
     grid-area: main;
     display: grid;
     grid-template-columns: 100%;
+    background-color: darkgray;
 }
 
 .App-article-card {
     border: 2px solid red;
     margin: 10px;
+    background-color: white;
 }
 
 .App-comment-card {
     border: 2px solid darkslategrey;
+    background-color: lightgrey;
 }
 
 .App-article-card > .App-comment-card {

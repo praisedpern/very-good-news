@@ -9,9 +9,11 @@ const VoteBar = ({ props }) => {
 
     const handleVotes = (incByAmount) => {
         let idToUse
-        let patchType = 'articles'
-        if (props.article_id) idToUse = props.article_id
-        else {
+        let patchType
+        if (props.article_id) {
+            patchType = 'articles'
+            idToUse = props.article_id
+        } else {
             patchType = 'comments'
             idToUse = props.comment_id
         }
