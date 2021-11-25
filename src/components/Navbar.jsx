@@ -1,12 +1,13 @@
 import UserCard from './UserCard'
+import DropdownMenu from './DropdownMenu'
 
 const Navbar = () => {
     return (
         <nav className="App-nav">
-            <h3>Topics</h3>
-            <h3>Articles</h3>
-            <h3>Comments</h3>
-            <UserCard user='grumpy19'/>
+            <><DropdownMenu /></>
+            <p>Articles</p>
+            <p>Comments</p>
+            {/* <UserCard user='grumpy19'/> */}
         </nav>
     )
 }

@@ -95,3 +95,18 @@ h2 {
     grid-template-columns: 100%;
     grid-template-rows: min-content min-content;
 }
+
+.dd-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.dd-list-item {
+    display: none;
+    position: relative;
+    text-transform: capitalize;
+}
+
+.dd-wrapper:hover .dd-list-item {
+    display: block;
+}

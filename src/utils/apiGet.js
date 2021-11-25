@@ -16,6 +16,13 @@ export const getUsers = () => {
     })
 }
 
+export const getTopics = () => {
+    return newsApi.get('/topics').then(({ data }) => {
+        console.log('GET /topics')
+        return data.topics
+    })
+}
+
 export const getArticles = () => {
     return newsApi.get('/articles').then(({ data }) => {
         console.log('GET /articles')
