@@ -8,25 +8,8 @@ import Navbar from './components/Navbar'
 import Sorter from './components/Sorter'
 import Articles from './components/Articles'
 import AllTopics from './components/AllTopics'
-import SingleArticle from './components/SingleArticle'
 
 function App() {
-    // useEffect(() => {
-    //     getUsers().then((users) => {
-    //         console.log(users)
-    //         setAllUsers(users)
-    //         setAllUsers(
-    //             users.map((user, index) => {
-    //                 !index && setCurrentUser(user.username)
-    //                 return user.username
-    //             })
-    //         )
-    //     })
-    // }, [])
-
-    // useEffect(() => {
-    //     setCurrentUser(allUsers[0])
-    // }, [allUsers])
     const [topics, setTopics] = useState([])
 
     useEffect(() => {
@@ -59,7 +42,7 @@ function App() {
                     })}
                     <Route
                         path="/articles/:article_id"
-                        element={<SingleArticle />}
+                        element={<Articles />}
                     />
                 </Routes>
             </div>
