@@ -10,7 +10,7 @@ const Navbar = ({ topics }) => {
             </>
             <Link to="/articles">Articles</Link>
             <Link to="/comments">Comments</Link>
-            {/* <UserCard user='grumpy19'/> */}
+            <UserCard user='grumpy19'/>
         </nav>
     )
 }

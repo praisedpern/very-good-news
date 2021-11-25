@@ -11,8 +11,6 @@ const Articles = ({topic}) => {
         })
     }, [])
 
-    console.log(topic)
-
     return (
         <main className="App-main">
             {articles.map((article) => {

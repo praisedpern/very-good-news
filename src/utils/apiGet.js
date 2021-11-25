@@ -30,6 +30,13 @@ export const getArticles = () => {
     })
 }
 
+export const getArticleById = (articleId) => {
+    return newsApi.get(`/articles/${articleId}`).then(({ data }) => {
+        console.log(`GET /articles/${articleId}`)
+        return data.article
+    })
+}
+
 export const getComments = (articleId) => {
     return newsApi.get(`/articles/${articleId}/comments`).then(({ data }) => {
         console.log('GET /articles/:article_id/comments')

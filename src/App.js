@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import { getTopics } from './utils/apiGet'
 
@@ -8,6 +8,7 @@ import Navbar from './components/Navbar'
 import Sorter from './components/Sorter'
 import Articles from './components/Articles'
 import AllTopics from './components/AllTopics'
+import SingleArticle from './components/SingleArticle'
 
 function App() {
     // useEffect(() => {
@@ -27,6 +28,7 @@ function App() {
     //     setCurrentUser(allUsers[0])
     // }, [allUsers])
     const [topics, setTopics] = useState([])
+    let { id } = useParams()
 
     useEffect(() => {
         getTopics().then((topicsToSet) => {
@@ -41,7 +43,10 @@ function App() {
                 <Navbar topics={topics} />
                 <Sorter />
                 <Routes>
-                    <Route path="/topics" element={<AllTopics topics={topics}/>} />
+                    <Route
+                        path="/topics"
+                        element={<AllTopics topics={topics} />}
+                    />
                     <Route path="/" element={<Articles />} />
                     <Route path="/articles" element={<Articles />} />
                     {topics.map((topic) => {
@@ -53,6 +58,10 @@ function App() {
                             />
                         )
                     })}
+                    <Route
+                        path="/articles/:article_id"
+                        element={<SingleArticle />}
+                    />
                 </Routes>
             </div>
         </BrowserRouter>
