@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, useParams } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import { getTopics } from './utils/apiGet'
 
@@ -28,7 +28,6 @@ function App() {
     //     setCurrentUser(allUsers[0])
     // }, [allUsers])
     const [topics, setTopics] = useState([])
-    let { id } = useParams()
 
     useEffect(() => {
         getTopics().then((topicsToSet) => {

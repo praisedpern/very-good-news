@@ -14,7 +14,7 @@ const Articles = ({topic}) => {
     return (
         <main className="App-main">
             {articles.map((article) => {
-                if (topic && article.topic !== topic) return
+                if (topic && article.topic !== topic) return null
                 return <ArticleCard key={`article${article.article_id}`} article={article}/>
             })}
         </main>
