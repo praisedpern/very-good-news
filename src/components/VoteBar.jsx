@@ -37,6 +37,7 @@ const VoteBar = ({ props }) => {
     return (
         <>
             <h3>{props.title}</h3>
+            <p>{props.topic}</p>
             <section className="App-vote-bar">
                 <button
                     disabled={!plusEnabled}
