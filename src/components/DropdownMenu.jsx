@@ -1,11 +1,13 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const DropdownMenu = ({topics}) => {
     const [isHidden, setIsHidden] = useState(true)
 
     return (
         <div className="dd-wrapper">
-            <p
+            <Link
+                to="/topics"
                 onClick={() => {
                     setIsHidden(() => {
                         if (isHidden) return false
@@ -15,12 +17,12 @@ const DropdownMenu = ({topics}) => {
                 className="dd-title"
             >
                 Topics
-            </p>
+            </Link>
             {topics.map((topic) => {
                 return (
-                    <button key={topic.slug} className="dd-list-item">
+                    <Link to={`/topics/`+topic.slug} key={topic.slug} className="dd-list-item">
                         {topic.slug}
-                    </button>
+                    </Link>
                 )
             })}
         </div>

@@ -7,6 +7,7 @@ import Header from './components/Header'
 import Navbar from './components/Navbar'
 import Sorter from './components/Sorter'
 import Articles from './components/Articles'
+import AllTopics from './components/AllTopics'
 
 function App() {
     // useEffect(() => {
@@ -27,25 +28,29 @@ function App() {
     // }, [allUsers])
     const [topics, setTopics] = useState([])
 
-        useEffect(() => {
+    useEffect(() => {
         getTopics().then((topicsToSet) => {
-            setTopics([{slug: 'all'}, ...topicsToSet])
+            setTopics([{ slug: 'all' }, ...topicsToSet])
         })
     }, [])
-
-    console.log(topics)
 
     return (
         <BrowserRouter>
             <div className="App">
                 <Header />
-                <Navbar topics={topics}/>
+                <Navbar topics={topics} />
                 <Sorter />
                 <Routes>
+                    <Route path="/topics" element={<AllTopics topics={topics}/>} />
                     <Route path="/" element={<Articles />} />
-                    {topics.map(topic => {
-                        return <Route path={`/${topic.slug}`} 
-                        element={<Articles topic={topic.slug}/>} />
+                    {topics.map((topic) => {
+                        return (
+                            <Route
+                                key={'topicRoute-' + topic.slug}
+                                path={`/topics/${topic.slug}`}
+                                element={<Articles topic={topic.slug} />}
+                            />
+                        )
                     })}
                 </Routes>
             </div>

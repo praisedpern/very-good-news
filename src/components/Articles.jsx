@@ -2,7 +2,7 @@ import ArticleCard from './ArticleCard'
 import { getArticles } from '../utils/apiGet'
 import { useEffect, useState } from 'react'
 
-const Articles = () => {
+const Articles = ({topic}) => {
     const [articles, setArticles] = useState([])
 
     useEffect(() => {
@@ -10,6 +10,8 @@ const Articles = () => {
             setArticles(result)
         })
     }, [])
+
+    console.log(topic)
 
     return (
         <main className="App-main">
