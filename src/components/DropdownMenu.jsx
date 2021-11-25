@@ -1,15 +1,7 @@
-import { getTopics } from '../utils/apiGet'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 
-const DropdownMenu = () => {
-    const [topics, setTopics] = useState([])
+const DropdownMenu = ({topics}) => {
     const [isHidden, setIsHidden] = useState(true)
-
-    useEffect(() => {
-        getTopics().then((topicsToSet) => {
-            setTopics([{slug: 'all'}, ...topicsToSet])
-        })
-    }, [])
 
     return (
         <div className="dd-wrapper">

@@ -1,4 +1,6 @@
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import { getTopics } from './utils/apiGet'
 
 import './App.css'
 import Header from './components/Header'
@@ -7,7 +9,6 @@ import Sorter from './components/Sorter'
 import Articles from './components/Articles'
 
 function App() {
-
     // useEffect(() => {
     //     getUsers().then((users) => {
     //         console.log(users)
@@ -24,14 +25,31 @@ function App() {
     // useEffect(() => {
     //     setCurrentUser(allUsers[0])
     // }, [allUsers])
+    const [topics, setTopics] = useState([])
+
+        useEffect(() => {
+        getTopics().then((topicsToSet) => {
+            setTopics([{slug: 'all'}, ...topicsToSet])
+        })
+    }, [])
+
+    console.log(topics)
 
     return (
-        <div className="App">
-            <Header />
-            <Navbar />
-            <Sorter />
-            <Articles />
-        </div>
+        <BrowserRouter>
+            <div className="App">
+                <Header />
+                <Navbar topics={topics}/>
+                <Sorter />
+                <Routes>
+                    <Route path="/" element={<Articles />} />
+                    {topics.map(topic => {
+                        return <Route path={`/${topic.slug}`} 
+                        element={<Articles topic={topic.slug}/>} />
+                    })}
+                </Routes>
+            </div>
+        </BrowserRouter>
     )
 }
 
