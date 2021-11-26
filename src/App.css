@@ -74,10 +74,15 @@ h2 {
 .App-votebar {
     display: grid;
     grid-template-rows: min-content min-content;
-    grid-template-columns: min-content auto min-content auto 150px;
+    grid-template-columns: auto auto auto auto min-content;
     grid-template-areas:
         'App-votebar-title App-votebar-title App-votebar-title App-votebar-title App-votebar-usercard'
-        'App-votebar-plusbutton App-votebar-votes App-votebar-minusbutton App-votebar-timestamp App-votebar-usercard';
+        'App-votebar-timestamp App-votebar-plusbutton App-votebar-votes App-votebar-minusbutton App-votebar-usercard';
+    text-align: justify;
+}
+
+.App-votebar > * {
+    padding: 10px;
 }
 
 .App-article-body {
@@ -107,6 +112,10 @@ h2 {
 }
 .App-votebar-timestamp {
     grid-area: App-votebar-timestamp;
+}
+
+.App-votebar-plusbutton, .App-votebar-minusbutton {
+    place-content: center;
 }
 
 .Dropdown {

@@ -63,7 +63,7 @@ const VoteBar = ({ props }) => {
                 -
             </button>
             <p className="App-votebar-timestamp">
-                posted at {props.created_at} in{' '}
+                posted at {props.created_at} in
                 <Link to={`/topics/${props.topic}`}>{props.topic}</Link>
             </p>
         </section>
