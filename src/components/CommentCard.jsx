@@ -4,7 +4,7 @@ const CommentCard = ({ comment }) => {
     return (
         <section className="App-comment-card">
             <VoteBar props={comment} />
-            <p>{comment.body}</p>
+            <p className="App-comment-body">{comment.body}</p>
         </section>
     )
 }

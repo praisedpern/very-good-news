@@ -1,3 +1,4 @@
+/* basic styling */
 body {
     margin: 0 3%;
     text-align: center;
@@ -23,6 +24,7 @@ h2 {
     font-size: small;
 }
 
+/* app styling */
 .App {
     display: grid;
     grid-template-columns: 1fr;
@@ -71,6 +73,7 @@ h2 {
     border-radius: 4px;
 }
 
+/* App-votebar has its own grid */
 .App-votebar {
     display: grid;
     grid-template-rows: min-content min-content;
@@ -118,6 +121,24 @@ h2 {
     place-content: center;
 }
 
+/* CommentCard styling */
+.App-comment-card {
+    background-color: lightgray;
+    border-radius: 4px;
+    margin: 10px;
+    padding-bottom: 2px;
+}
+
+.App-comment-body {
+    padding: 10px;
+    margin: 10px;
+    background-color: white;
+    border: 2px solid lightblue;
+    border-radius: 4px;
+    text-align: left;
+}
+
+/* Dropdown menu for topics is handled in CSS */
 .Dropdown {
     position: relative;
     display: inline-block;
