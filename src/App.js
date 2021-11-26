@@ -21,8 +21,10 @@ function App() {
     return (
         <BrowserRouter>
             <div className="App">
+                <div className="App-header">
                 <Header />
                 <Navbar topics={topics} />
+                </div>
                 <Sorter />
                 <Routes>
                     <Route

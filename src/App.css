@@ -2,6 +2,12 @@ body {
     margin: 0 3%;
 }
 
+a {
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+}
+
 h1 {
     text-transform: uppercase;
     font-weight: bold;
@@ -12,101 +18,57 @@ h1 {
 
 h2 {
     text-transform: uppercase;
-    color: white;
+    /* color: white; */
     font-size: small;
 }
 
 .App {
-    text-align: center;
-    min-height: 100vh;
     display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: min-content min-content min-content auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: min-content min-content auto;
     grid-template-areas:
-        'header'
-        'navbar'
-        'sorter'
-        'main';
-}
-
-.App > * {
-    padding: 10px;
+        'App-header'
+        'App-sorter'
+        'App-main';
 }
 
 .App-header {
-    border: 2px solid red;
-    grid-area: header;
-    background-color: darkblue;
+    grid-area: App-header;
 }
 
-.App-nav {
-    border: 2px solid green;
-    grid-area: navbar;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 100px;
-    grid-template-rows: 100%;
-}
-
-.App-sorter {
-    border: 2px solid orangered;
-    grid-area: sorter;
-}
-
-.App-sorter ul {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 100%;
+.App-sorter{
+    grid-area: App-sorter;
 }
 
 .App-main {
-    border: 2px solid green;
-    grid-area: main;
-    display: grid;
-    grid-template-columns: 100%;
-    background-color: darkgray;
+    grid-area: App-main;
 }
 
-.App-article-card {
-    border: 2px solid red;
-    margin: 10px;
-    background-color: white;
-}
-
-.App-comment-card {
-    border: 2px solid darkslategrey;
-    background-color: lightgrey;
-}
-
-.App-article-card > .App-comment-card {
-    margin: 10px;
-}
-
-.App-vote-bar {
-    padding: 10px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr min-content;
-    grid-template-rows: min-content;
-}
-
-.App-user-card {
-    border: 2px solid #5adface5;
-    place-items: center;
-    display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: min-content min-content;
-}
-
-.dd-wrapper {
-    display: grid;
-    grid-template-columns: 1fr;
-}
-
-.dd-list-item {
-    display: none;
+.Dropdown {
     position: relative;
-    text-transform: capitalize;
+    display: inline-block;
 }
 
-.dd-wrapper:hover .dd-list-item {
-    display: block;
+.Dropdown-items {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    background-color: white;
+    top: 28px;
+}
+
+.Dropdown:hover .Dropdown-items {
+    display: grid;
+}
+
+.App-nav > a:hover {
+    background-color: red;
+}
+
+.Dropdown > a:hover {
+    background-color: red;
+}
+
+.Dropdown-items > a:hover {
+    background-color: red;
 }
