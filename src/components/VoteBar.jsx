@@ -7,6 +7,7 @@ const VoteBar = ({ props }) => {
     const [addedVotes, setAddedVotes] = useState(0)
     const [plusEnabled, setPlusEnabled] = useState(true)
     const [minusEnabled, setMinusEnabled] = useState(true)
+    const [articleTopicStr, setArticleTopicStr] = useState('')
 
     const handleVotes = (incByAmount) => {
         let idToUse
@@ -35,36 +36,44 @@ const VoteBar = ({ props }) => {
         })
     }, [addedVotes])
 
+    useEffect(()=>{
+        if (props.topic) {
+            return setArticleTopicStr(`in ${props.topic}`)
+        }
+    }, [props.topic])
+
     return (
         <section className="App-votebar">
             <h3 className="App-votebar-title">
                 <Link to={`/articles/${props.article_id}`}>{props.title}</Link>
             </h3>
             <UserCard user={props.author} />
-            <button
-                className="App-votebar-plusbutton"
-                disabled={!plusEnabled}
-                onClick={() => {
-                    return handleVotes(1)
-                }}
-            >
-                +
-            </button>
-            <p className="App-votebar-votes">
-                votes: {props.votes + addedVotes}
-            </p>
-            <button
-                className="App-votebar-minusbutton"
-                disabled={!minusEnabled}
-                onClick={() => {
-                    return handleVotes(-1)
-                }}
-            >
-                -
-            </button>
+            <div className="App-votebar-votepanel">
+                <button
+                    className="App-votebar-plusbutton"
+                    disabled={!plusEnabled}
+                    onClick={() => {
+                        return handleVotes(1)
+                    }}
+                >
+                    +
+                </button>
+                <p className="App-votebar-votes">
+                    votes: {props.votes + addedVotes}
+                </p>
+                <button
+                    className="App-votebar-minusbutton"
+                    disabled={!minusEnabled}
+                    onClick={() => {
+                        return handleVotes(-1)
+                    }}
+                >
+                    -
+                </button>
+            </div>
             <p className="App-votebar-timestamp">
-                posted at {props.created_at} in
-                <Link to={`/topics/${props.topic}`}>{props.topic}</Link>
+                posted at {props.created_at}
+                <Link to={`/topics/${props.topic}`}>{articleTopicStr}</Link>
             </p>
         </section>
     )

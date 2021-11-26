@@ -8,7 +8,7 @@ const Sorter = () => {
             <label htmlFor="comment_count">comment_count</label>
             <input name="sort_by" value="votes" type="radio" />
             <label htmlFor="votes">votes </label>
-            <button>Asc/Desc</button>
+            <button>Asc</button> <button>Desc</button>
         </section>
     )
 }

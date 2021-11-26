@@ -77,10 +77,10 @@ h2 {
 .App-votebar {
     display: grid;
     grid-template-rows: min-content min-content;
-    grid-template-columns: auto auto auto auto min-content;
+    grid-template-columns: auto auto min-content;
     grid-template-areas:
-        'App-votebar-title App-votebar-title App-votebar-title App-votebar-title App-votebar-usercard'
-        'App-votebar-timestamp App-votebar-plusbutton App-votebar-votes App-votebar-minusbutton App-votebar-usercard';
+        'App-votebar-title App-votebar-title App-votebar-usercard'
+        'App-votebar-votepanel App-votebar-timestamp App-votebar-usercard';
     text-align: justify;
 }
 
@@ -91,7 +91,8 @@ h2 {
 .App-article-body {
     border: 1px solid lightblue;
     background-color: white;
-    padding: 14px 14px 30px;
+    padding: 10px 10px 30px;
+    margin: 10px 10px 30px;
     border-radius: 4px;
     text-align: left;
 }
@@ -103,15 +104,18 @@ h2 {
     grid-area: App-votebar-usercard;
     display: grid;
     place-items: center;
+    border: 1px solid lightblue;
+    border-radius: 4px;
+    margin: 10px;
+    background-color: white;
 }
-.App-votebar-plusbutton {
-    grid-area: App-votebar-plusbutton;
-}
-.App-votebar-votes {
-    grid-area: App-votebar-votes;
-}
-.App-votebar-minusbutton {
-    grid-area: App-votebar-minusbutton;
+.App-votebar-votepanel {
+    grid-area: App-votebar-votepanel;
+    place-content: center;
+    text-align: center;
+    display: grid;
+    grid-template-rows: min-content;
+    grid-template-columns: auto auto auto;
 }
 .App-votebar-timestamp {
     grid-area: App-votebar-timestamp;
