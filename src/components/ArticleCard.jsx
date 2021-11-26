@@ -17,7 +17,7 @@ const ArticleCard = ({ article, renderComments }) => {
     return (
         <section className="App-article-card">
             <VoteBar props={article} />
-            <p>{article.body}</p>
+            <p className="App-article-body">{article.body}</p>
             {comments.map((comment) => {
                 if (!renderComments) return null
                 return (

@@ -36,31 +36,37 @@ const VoteBar = ({ props }) => {
     }, [addedVotes])
 
     return (
-        <>
-            <h3><Link to={`/articles/${props.article_id}`}>{props.title}</Link></h3>
-            <p>{props.topic}</p>
-            <section className="App-vote-bar">
-                <button
-                    disabled={!plusEnabled}
-                    onClick={() => {
-                        return handleVotes(1)
-                    }}
-                >
-                    +
-                </button>
+        <section className="App-votebar">
+            <h3 className="App-votebar-title">
+                <Link to={`/articles/${props.article_id}`}>{props.title}</Link>
+            </h3>
+            <UserCard user={props.author} />
+            <button
+                className="App-votebar-plusbutton"
+                disabled={!plusEnabled}
+                onClick={() => {
+                    return handleVotes(1)
+                }}
+            >
+                +
+            </button>
+            <p className="App-votebar-votes">
                 votes: {props.votes + addedVotes}
-                <button
-                    disabled={!minusEnabled}
-                    onClick={() => {
-                        return handleVotes(-1)
-                    }}
-                >
-                    -
-                </button>
-                posted: {props.created_at}
-                <UserCard user={props.author} />
-            </section>
-        </>
+            </p>
+            <button
+                className="App-votebar-minusbutton"
+                disabled={!minusEnabled}
+                onClick={() => {
+                    return handleVotes(-1)
+                }}
+            >
+                -
+            </button>
+            <p className="App-votebar-timestamp">
+                posted at {props.created_at} in{' '}
+                <Link to={`/topics/${props.topic}`}>{props.topic}</Link>
+            </p>
+        </section>
     )
 }
 
