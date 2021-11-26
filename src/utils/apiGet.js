@@ -23,8 +23,8 @@ export const getTopics = () => {
     })
 }
 
-export const getArticles = () => {
-    return newsApi.get('/articles').then(({ data }) => {
+export const getArticles = (search) => {
+    return newsApi.get(`/articles${search}`).then(({ data }) => {
         console.log('GET /articles')
         return data.articles
     })

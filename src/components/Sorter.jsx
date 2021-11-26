@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const Sorter = () => {
     const [radioObj, setRadioObj] = useState({
@@ -7,7 +8,10 @@ const Sorter = () => {
         votes: false,
     })
 
+    const [queryToSend, setQueryToSend] = useState('')
+
     const radioObjHelper = (propToChange) => {
+        setQueryToSend(propToChange)
         setRadioObj((oldRadioObj) => {
             const newRadioObj = { ...oldRadioObj }
             for (const property in newRadioObj) {
@@ -51,10 +55,12 @@ const Sorter = () => {
                 }}
             />
             <label htmlFor="votes">votes </label>
-            <button onClick={()=>{
-                console.log(radioObj)
-            }
-            }>Asc</button> <button>Desc</button>
+            <Link to={`/articles?sort_by=${queryToSend}&order=asc`}>
+                <button>Asc</button>{' '}
+            </Link>
+            <Link to={`/articles?sort_by=${queryToSend}&order=desc`}>
+                <button>Desc</button>
+            </Link>
         </section>
     )
 }
