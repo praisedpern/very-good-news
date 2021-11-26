@@ -23,7 +23,7 @@ const Articles = ({ topic }) => {
     }, [article_id, setArticles, setRenderComments])
 
     return (
-        <main className="App-main">
+            <>
             {articles.map((article) => {
                 if (topic && article.topic !== topic) return null
                 return (
@@ -35,7 +35,7 @@ const Articles = ({ topic }) => {
                     />
                 )
             })}
-        </main>
+        </>
     )
 }
 
