@@ -142,6 +142,10 @@ h2 {
     text-align: left;
 }
 
+.App-all-topics {
+    text-transform: capitalize;
+}
+
 /* Dropdown menu for topics is handled in CSS */
 .Dropdown {
     position: relative;
@@ -154,6 +158,7 @@ h2 {
     z-index: 1;
     background-color: white;
     top: 28px;
+    text-transform: capitalize;
 }
 
 .Dropdown:hover .Dropdown-items {
