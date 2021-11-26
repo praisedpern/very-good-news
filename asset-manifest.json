@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/very-good-news/static/css/main.a810cf29.chunk.css",
-    "main.js": "/very-good-news/static/js/main.6fd409fe.chunk.js",
-    "main.js.map": "/very-good-news/static/js/main.6fd409fe.chunk.js.map",
+    "main.css": "/very-good-news/static/css/main.b61df2ee.chunk.css",
+    "main.js": "/very-good-news/static/js/main.bc708ecd.chunk.js",
+    "main.js.map": "/very-good-news/static/js/main.bc708ecd.chunk.js.map",
     "runtime-main.js": "/very-good-news/static/js/runtime-main.89b6ef0b.js",
     "runtime-main.js.map": "/very-good-news/static/js/runtime-main.89b6ef0b.js.map",
     "static/js/2.0097fea5.chunk.js": "/very-good-news/static/js/2.0097fea5.chunk.js",
     "static/js/2.0097fea5.chunk.js.map": "/very-good-news/static/js/2.0097fea5.chunk.js.map",
     "index.html": "/very-good-news/index.html",
-    "static/css/main.a810cf29.chunk.css.map": "/very-good-news/static/css/main.a810cf29.chunk.css.map",
+    "static/css/main.b61df2ee.chunk.css.map": "/very-good-news/static/css/main.b61df2ee.chunk.css.map",
     "static/js/2.0097fea5.chunk.js.LICENSE.txt": "/very-good-news/static/js/2.0097fea5.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.89b6ef0b.js",
     "static/js/2.0097fea5.chunk.js",
-    "static/css/main.a810cf29.chunk.css",
-    "static/js/main.6fd409fe.chunk.js"
+    "static/css/main.b61df2ee.chunk.css",
+    "static/js/main.bc708ecd.chunk.js"
   ]
 }
