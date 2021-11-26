@@ -22,31 +22,33 @@ function App() {
         <BrowserRouter>
             <div className="App">
                 <div className="App-header">
-                <Header />
-                <Navbar topics={topics} />
+                    <Header />
+                    <Navbar topics={topics} />
                 </div>
                 <Sorter />
-                <Routes>
-                    <Route
-                        path="/topics"
-                        element={<AllTopics topics={topics} />}
-                    />
-                    <Route path="/" element={<Articles />} />
-                    <Route path="/articles" element={<Articles />} />
-                    {topics.map((topic) => {
-                        return (
-                            <Route
-                                key={'topicRoute-' + topic.slug}
-                                path={`/topics/${topic.slug}`}
-                                element={<Articles topic={topic.slug} />}
-                            />
-                        )
-                    })}
-                    <Route
-                        path="/articles/:article_id"
-                        element={<Articles />}
-                    />
-                </Routes>
+                <main className="App-main">
+                    <Routes>
+                        <Route
+                            path="/topics"
+                            element={<AllTopics topics={topics} />}
+                        />
+                        <Route path="/" element={<Articles />} />
+                        <Route path="/articles" element={<Articles />} />
+                        {topics.map((topic) => {
+                            return (
+                                <Route
+                                    key={'topicRoute-' + topic.slug}
+                                    path={`/topics/${topic.slug}`}
+                                    element={<Articles topic={topic.slug} />}
+                                />
+                            )
+                        })}
+                        <Route
+                            path="/articles/:article_id"
+                            element={<Articles />}
+                        />
+                    </Routes>
+                </main>
             </div>
         </BrowserRouter>
     )
