@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useSearchParams } from 'react-router-dom'
 
 const Sorter = () => {
     const [radioObj, setRadioObj] = useState({
@@ -8,7 +8,8 @@ const Sorter = () => {
         votes: false,
     })
 
-    const [queryToSend, setQueryToSend] = useState('')
+    const [queryToSend, setQueryToSend] = useState(Object.keys(radioObj)[0])
+    const [queryParams, setQueryParams] = useSearchParams({})
 
     const radioObjHelper = (propToChange) => {
         setQueryToSend(propToChange)
@@ -55,12 +56,20 @@ const Sorter = () => {
                 }}
             />
             <label htmlFor="votes">votes </label>
-            <Link to={`/articles?sort_by=${queryToSend}&order=asc`}>
-                <button>Asc</button>{' '}
-            </Link>
-            <Link to={`/articles?sort_by=${queryToSend}&order=desc`}>
-                <button>Desc</button>
-            </Link>
+            <button
+                onClick={() => {
+                    setQueryParams({ sort_by: queryToSend, order: 'asc' })
+                }}
+            >
+                Asc
+            </button>{' '}
+            <button
+                onClick={() => {
+                    setQueryParams({ sort_by: queryToSend, order: 'desc' })
+                }}
+            >
+                Desc
+            </button>
         </section>
     )
 }
