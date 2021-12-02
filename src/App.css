@@ -37,6 +37,11 @@ button {
     max-height: 28px;
 }
 
+textarea {
+    resize: none;
+    overflow: auto;
+}
+
 /* app styling */
 .App {
     display: grid;
@@ -173,6 +178,28 @@ button {
 
 .App-all-topics {
     text-transform: capitalize;
+}
+
+/* Comment box styling */
+.App-comment-box-container {
+    display: grid;
+    grid-template-rows: min-content auto;
+    grid-template-areas: 'current-user-card comment-box';
+    white-space: nowrap;
+}
+
+.App-current-user-card {
+    grid-area: current-user-card
+}
+
+.App-comment-input {
+    grid-area: comment-box;
+    position: relative;
+    left: 10px;
+}
+
+.App-comment-box-container > * {
+    display: inline-block;
 }
 
 /* Dropdown menu for topics is handled in CSS */

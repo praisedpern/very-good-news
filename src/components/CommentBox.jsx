@@ -8,26 +8,33 @@ const CommentBox = ({ article, renderComments }) => {
     const { currentUser } = useContext(UserContext)
 
     return (
-        <section className="App-comment-box">
-            <UserCard />
-            <label htmlFor="comment-to-post">Post comment: </label>
-            <input
-                name="comment-to-post"
-                type="text"
-                value={commentToPost}
-                onChange={(e) => {
-                    e.preventDefault()
-                    return setCommentToPost(e.target.value)
-                }}
-            ></input>
-            <button
-                onClick={() => {
-                    postComment(article.article_id, currentUser, commentToPost)
-                    return setCommentToPost('')
-                }}
-            >
-                Post
-            </button>
+        <section className="App-comment-box-container">
+            <UserCard className="App-current-user-card" user={currentUser} />
+            <div className="App-comment-input">
+                <textarea
+                    className="App-comment-body"
+                    name="comment-to-post"
+                    value={commentToPost}
+                    onChange={(e) => {
+                        e.preventDefault()
+                        return setCommentToPost(e.target.value)
+                    }}
+                    rows="6"
+                    cols="80"
+                />
+                <button
+                    onClick={() => {
+                        postComment(
+                            article.article_id,
+                            currentUser,
+                            commentToPost
+                        )
+                        return setCommentToPost('')
+                    }}
+                >
+                    Post
+                </button>
+            </div>
         </section>
     )
 }
