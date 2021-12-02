@@ -24,6 +24,19 @@ h2 {
     font-size: small;
 }
 
+button {
+    background-color: slategray;
+    border: none;
+    color: white;
+    padding: 6px;
+    margin: 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    max-height: 28px;
+}
+
 /* app styling */
 .App {
     display: grid;
@@ -76,16 +89,17 @@ h2 {
 /* App-votebar has its own grid */
 .App-votebar {
     display: grid;
-    grid-template-rows: min-content min-content;
-    grid-template-columns: auto auto min-content;
+    grid-template-columns: auto min-content min-content;
     grid-template-areas:
-        'App-votebar-title App-votebar-title App-votebar-usercard'
-        'App-votebar-votepanel App-votebar-timestamp App-votebar-usercard';
+        'App-votebar-title App-votebar-timestamp App-votebar-votepanel';
     text-align: justify;
+    white-space: nowrap;
 }
 
 .App-votebar > * {
+    display: inline-block;
     padding: 10px;
+    position: relative;
 }
 
 .App-article-body {
@@ -101,13 +115,14 @@ h2 {
     grid-area: App-votebar-title;
 }
 .App-votebar-usercard {
-    grid-area: App-votebar-usercard;
+    /* grid-area: App-votebar-usercard; */
     display: grid;
     place-items: center;
     border: 1px solid lightblue;
     border-radius: 4px;
     margin: 10px;
     background-color: white;
+    width: 135px;
 }
 .App-votebar-votepanel {
     grid-area: App-votebar-votepanel;
@@ -117,12 +132,25 @@ h2 {
     grid-template-rows: min-content;
     grid-template-columns: auto auto auto;
 }
+.App-votebar-panel > * {
+    margin: 10px;
+}
 .App-votebar-timestamp {
     grid-area: App-votebar-timestamp;
 }
 
 .App-votebar-plusbutton, .App-votebar-minusbutton {
     place-content: center;
+}
+
+.App-article-body-container {
+    display: grid;
+    grid-template-columns: auto min-content;
+    grid-template-areas: 'body user-card';
+}
+
+.App-article-body-container > * {
+    display: inline-block;
 }
 
 /* CommentCard styling */
@@ -140,6 +168,7 @@ h2 {
     border: 2px solid lightblue;
     border-radius: 4px;
     text-align: left;
+    grid-area: body;
 }
 
 .App-all-topics {

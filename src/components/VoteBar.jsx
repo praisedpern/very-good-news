@@ -1,4 +1,3 @@
-import UserCard from './UserCard'
 import { useState, useEffect } from 'react'
 import { patchVotes } from '../utils/apiPatch'
 import { Link } from 'react-router-dom'
@@ -36,7 +35,7 @@ const VoteBar = ({ props }) => {
         })
     }, [addedVotes])
 
-    useEffect(()=>{
+    useEffect(() => {
         if (props.topic) {
             return setArticleTopicStr(`in ${props.topic}`)
         }
@@ -47,7 +46,10 @@ const VoteBar = ({ props }) => {
             <h3 className="App-votebar-title">
                 <Link to={`/articles/${props.article_id}`}>{props.title}</Link>
             </h3>
-            <UserCard user={props.author} />
+            <p className="App-votebar-timestamp">
+                posted at {props.created_at}
+                <Link to={`/topics/${props.topic}`}>{articleTopicStr}</Link>
+            </p>
             <div className="App-votebar-votepanel">
                 <button
                     className="App-votebar-plusbutton"
@@ -71,10 +73,6 @@ const VoteBar = ({ props }) => {
                     -
                 </button>
             </div>
-            <p className="App-votebar-timestamp">
-                posted at {props.created_at}
-                <Link to={`/topics/${props.topic}`}>{articleTopicStr}</Link>
-            </p>
         </section>
     )
 }
