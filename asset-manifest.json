@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/very-good-news/static/css/main.f838eb67.chunk.css",
-    "main.js": "/very-good-news/static/js/main.0023e9b7.chunk.js",
-    "main.js.map": "/very-good-news/static/js/main.0023e9b7.chunk.js.map",
+    "main.css": "/very-good-news/static/css/main.d45717dd.chunk.css",
+    "main.js": "/very-good-news/static/js/main.802ca3f8.chunk.js",
+    "main.js.map": "/very-good-news/static/js/main.802ca3f8.chunk.js.map",
     "runtime-main.js": "/very-good-news/static/js/runtime-main.89b6ef0b.js",
     "runtime-main.js.map": "/very-good-news/static/js/runtime-main.89b6ef0b.js.map",
-    "static/js/2.0ffbd4e9.chunk.js": "/very-good-news/static/js/2.0ffbd4e9.chunk.js",
-    "static/js/2.0ffbd4e9.chunk.js.map": "/very-good-news/static/js/2.0ffbd4e9.chunk.js.map",
+    "static/js/2.3698c227.chunk.js": "/very-good-news/static/js/2.3698c227.chunk.js",
+    "static/js/2.3698c227.chunk.js.map": "/very-good-news/static/js/2.3698c227.chunk.js.map",
     "index.html": "/very-good-news/index.html",
-    "static/css/main.f838eb67.chunk.css.map": "/very-good-news/static/css/main.f838eb67.chunk.css.map",
-    "static/js/2.0ffbd4e9.chunk.js.LICENSE.txt": "/very-good-news/static/js/2.0ffbd4e9.chunk.js.LICENSE.txt"
+    "static/css/main.d45717dd.chunk.css.map": "/very-good-news/static/css/main.d45717dd.chunk.css.map",
+    "static/js/2.3698c227.chunk.js.LICENSE.txt": "/very-good-news/static/js/2.3698c227.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.89b6ef0b.js",
-    "static/js/2.0ffbd4e9.chunk.js",
-    "static/css/main.f838eb67.chunk.css",
-    "static/js/main.0023e9b7.chunk.js"
+    "static/js/2.3698c227.chunk.js",
+    "static/css/main.d45717dd.chunk.css",
+    "static/js/main.802ca3f8.chunk.js"
   ]
 }
