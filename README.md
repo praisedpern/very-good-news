@@ -6,7 +6,8 @@ _-Ron Swanson_
 This is a frontend for for use with my [backend portfolio API](https://github.com/praisedpern/be-nc-news), with a colour scheme and title inspired by [my favourite Parks and Recreation character](https://parksandrecreation.fandom.com/wiki/Ron_Swanson).
 
 ## Requirements
-node.js
+node.js v16.8 or above
+npm v7.22 or above
 ## Running Locally
 Clone this repo and run `npm install` in the root folder.
 
