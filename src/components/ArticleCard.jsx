@@ -3,6 +3,7 @@ import { getComments } from '../utils/apiGet'
 import { useState, useEffect } from 'react/cjs/react.development'
 import VoteBar from './VoteBar'
 import UserCard from './UserCard'
+import CommentBox from './CommentBox'
 
 const ArticleCard = ({ article, renderComments }) => {
     const [comments, setComments] = useState([])
@@ -31,6 +32,7 @@ const ArticleCard = ({ article, renderComments }) => {
                     />
                 )
             })}
+            <CommentBox article={article} renderComments={renderComments} />
         </section>
     )
 }
