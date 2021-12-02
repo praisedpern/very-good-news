@@ -15,7 +15,7 @@ export const postComment = (articleId, username, commentBody) => {
             body: commentBody,
         })
         .then(({ data }) => {
-            console.log('POST /articles/:article_id/comments')
+            // console.log('POST /articles/:article_id/comments')
             return data[0]
         })
 }

@@ -15,7 +15,7 @@ export const patchVotes = (articleId, incByAmount, patchType = 'articles') => {
             inc_votes: incByAmount,
         })
         .then(({ data }) => {
-            console.log(`PATCH /${patchType}/${articleId}`)
+            // console.log(`PATCH /${patchType}/${articleId}`)
             return data[patchType]
         })
 }
