@@ -13,8 +13,8 @@ const UserCard = ({ user }) => {
     }, [user])
 
     return (
-        <section className="App-votebar-usercard">
-            <img alt="User avatar" src={avatarUrl} />
+        <section className="App-usercard">
+            <img className="App-usercard-avatar" alt="User avatar" src={avatarUrl} />
             <p>{user}</p>
         </section>
     )

@@ -121,16 +121,23 @@ textarea {
 .App-votebar-title {
     grid-area: App-votebar-title;
 }
-.App-votebar-usercard {
+.App-usercard {
     /* grid-area: App-votebar-usercard; */
     display: grid;
     place-items: center;
     border: 1px solid lightblue;
     border-radius: 4px;
     margin: 10px;
-    background-color: white;
+    background-color: lightsteelblue;
     width: 135px;
 }
+
+.App-usercard-avatar {
+    border: 1px solid lightblue;
+    margin: 18px;
+    max-width: 96px;
+}
+
 .App-votebar-votepanel {
     grid-area: App-votebar-votepanel;
     place-content: center;
@@ -146,11 +153,13 @@ textarea {
     grid-area: App-votebar-timestamp;
 }
 
-.App-votebar-plusbutton, .App-votebar-minusbutton {
+.App-votebar-plusbutton,
+.App-votebar-minusbutton {
     place-content: center;
 }
 
-.App-votebar-plusbutton:disabled, .App-votebar-minusbutton:disabled {
+.App-votebar-plusbutton:disabled,
+.App-votebar-minusbutton:disabled {
     background-color: lightgray;
 }
 
@@ -195,7 +204,7 @@ textarea {
 }
 
 .App-current-user-card {
-    grid-area: current-user-card
+    grid-area: current-user-card;
 }
 
 .App-comment-input {
@@ -242,3 +251,4 @@ textarea {
 .App-votebar-title > a:hover {
     text-decoration: underline;
 }
+
