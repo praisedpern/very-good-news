@@ -1,4 +1,4 @@
-import { getUserById, getUsers } from '../utils/apiGet'
+import { getUserById } from '../utils/apiGet'
 import { useState, useEffect } from 'react'
 
 const UserCard = ({ user }) => {
@@ -10,7 +10,7 @@ const UserCard = ({ user }) => {
         getUserById(user).then(({ avatar_url }) => {
             if (avatar_url) setAvatarUrl(avatar_url)
         })
-    }, [])
+    }, [user])
 
     return (
         <section className="App-votebar-usercard">
