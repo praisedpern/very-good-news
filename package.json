@@ -39,7 +39,6 @@
             "last 1 safari version"
         ]
     },
-    "homepage": "https://praisedpern.github.io/very-good-news",
     "devDependencies": {
         "gh-pages": "^3.2.3"
     }
