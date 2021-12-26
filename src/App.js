@@ -8,6 +8,7 @@ import Navbar from './components/Navbar'
 import Sorter from './components/Sorter'
 import Articles from './components/Articles'
 import AllTopics from './components/AllTopics'
+import AllComments from './components/AllComments'
 
 function App() {
     const [topics, setTopics] = useState([])
@@ -46,6 +47,10 @@ function App() {
                         <Route
                             path="/articles/:article_id"
                             element={<Articles />}
+                        />
+                        <Route
+                            path="/comments"
+                            element={<AllComments />}
                         />
                     </Routes>
                 </main>

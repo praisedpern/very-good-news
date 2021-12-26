@@ -26,3 +26,5 @@ yarn-error.log*
 
 README.old.md
 README.react.md
+
+.netlify
