@@ -1,12 +1,12 @@
 import CommentCard from './CommentCard'
 import { getComments } from '../utils/apiGet'
-import { useState, useEffect } from 'react/cjs/react.development'
+import { useState, useEffect } from 'react'
 import VoteBar from './VoteBar'
 import UserCard from './UserCard'
 import CommentBox from './CommentBox'
 
 const ArticleCard = ({ article, renderComments }) => {
-    const [comments, setComments] = useState([])
+    const [comments, setComments] = useState([null])
 
     useEffect(() => {
         if (renderComments) {
@@ -23,16 +23,31 @@ const ArticleCard = ({ article, renderComments }) => {
                 <p className="App-article-body">{article.body}</p>
                 <UserCard user={article.author} />
             </div>
-            {comments.map((comment) => {
-                if (!renderComments) return null
-                return (
-                    <CommentCard
-                        key={`comment${comment.comment_id}`}
-                        comment={comment}
-                    />
-                )
+            {comments.map((comment, index) => {
+                if (!renderComments || !comment) return null
+                else if (index === comments.length - 1) {
+                    return (
+                        <>
+                            <CommentCard
+                                key={`comment${comment.comment_id}`}
+                                comment={comment}
+                            />
+                            <CommentBox
+                                key={'commentBox'}
+                                article={article}
+                                renderComments={renderComments}
+                            />
+                        </>
+                    )
+                } else {
+                    return (
+                        <CommentCard
+                            key={`comment${comment.comment_id}`}
+                            comment={comment}
+                        />
+                    )
+                }
             })}
-            <CommentBox article={article} renderComments={renderComments} />
         </section>
     )
 }

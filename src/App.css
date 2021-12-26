@@ -95,8 +95,10 @@ textarea {
 .App-votebar {
     display: grid;
     grid-template-columns: auto min-content min-content;
+    grid-template-rows: auto min-content;
     grid-template-areas:
-        'App-votebar-title App-votebar-timestamp App-votebar-votepanel';
+        'App-votebar-title App-votebar-title App-votebar-title'
+        'App-votebar-timestamp App-votebar-timestamp App-votebar-votepanel';
     text-align: justify;
     white-space: nowrap;
 }
@@ -146,6 +148,10 @@ textarea {
 
 .App-votebar-plusbutton, .App-votebar-minusbutton {
     place-content: center;
+}
+
+.App-votebar-plusbutton:disabled, .App-votebar-minusbutton:disabled {
+    background-color: lightgray;
 }
 
 .App-article-body-container {
@@ -231,4 +237,8 @@ textarea {
 .Dropdown > a:hover,
 .Dropdown-items > a:hover {
     background-color: lightgray;
+}
+
+.App-votebar-title > a:hover {
+    text-decoration: underline;
 }

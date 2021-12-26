@@ -3,29 +3,29 @@ import { useState, useContext, useEffect } from 'react'
 import { postComment } from '../utils/apiPost'
 import { UserContext } from '../contexts/User'
 
-const CommentBox = ({ article, renderComments }) => {
+const CommentBox = ({ article }) => {
     const [commentToPost, setCommentToPost] = useState('')
     const { currentUser } = useContext(UserContext)
 
-    const [renderStyle, setRenderStyle] = useState({
-        display: 'none',
-    })
+    const getViewportWidth = () => {
+        return Math.max(
+            document.documentElement.clientWidth || 0,
+            window.innerWidth || 0
+        )
+    }
+
+    const refreshPage = () => {
+        window.location.reload(false)
+    }
+
+    const [viewportWidth, setViewportWidth] = useState(getViewportWidth())
 
     useEffect(() => {
-        if (renderComments)
-            return setRenderStyle({
-                display: 'visible',
-            })
-        else
-            return setRenderStyle({
-                display: 'none',
-            })
-    }, [renderComments])
-
-    console.log(renderStyle)
+        setViewportWidth(getViewportWidth())
+    }, [])
 
     return (
-        <section style={renderStyle} className="App-comment-box-container">
+        <section className="App-comment-box-container">
             <UserCard className="App-current-user-card" user={currentUser} />
             <div className="App-comment-input">
                 <textarea
@@ -37,7 +37,7 @@ const CommentBox = ({ article, renderComments }) => {
                         return setCommentToPost(e.target.value)
                     }}
                     rows="6"
-                    cols="80"
+                    cols={viewportWidth * 0.06}
                 />
                 <button
                     onClick={() => {
@@ -46,10 +46,11 @@ const CommentBox = ({ article, renderComments }) => {
                             currentUser,
                             commentToPost
                         )
-                        return setCommentToPost('')
+                        setCommentToPost('')
+                        return refreshPage()
                     }}
                 >
-                    Post
+                    Post Comment
                 </button>
             </div>
         </section>
